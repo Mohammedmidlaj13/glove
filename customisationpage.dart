@@ -4,6 +4,7 @@ import 'package:mevoicingglove/constants/cards.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'dart:collection';
+import 'package:mevoicingglove/authentication/database.dart';
 
 class CustomisationPage extends StatefulWidget {
   @override
@@ -11,8 +12,18 @@ class CustomisationPage extends StatefulWidget {
 }
 
 class _CustomisationPageState extends State<CustomisationPage> {
-  //Code
+  // Code to customize
   final fb = FirebaseDatabase.instance.reference();
+  String userID = "";
+  String key;
+  TextEditingController gestcontroller = TextEditingController();
+  // TextEditingController gest02controller = TextEditingController();
+  // TextEditingController gest03controller = TextEditingController();
+
+  // Call the customization class
+  updateData(String gest01,String key,  String userID) async {
+    await updateUserData(gest01,key);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -46,17 +57,21 @@ class _CustomisationPageState extends State<CustomisationPage> {
             ComboCard(
               height: height,
               width: width,
-              comboText: 'Combo 1',
+              comboText: 'Index and Middle Finger bend',
+
               onPressed: () {
-                createDialog(context,'Index and Middle Finger bent').then((value) {
-                  if (value != null) {
-                    Map<String, Object> createDoc = new HashMap();
-                    createDoc['Gest12'] = value;
-                    fb.child("Gesture").update(createDoc);
-                    final snackBar = SnackBar(content: Text('Gesture Updated'));
-                    ScaffoldMessenger.of(context).showSnackBar(snackBar);
-                  }
-                });
+                // createDialog(context).then((value) {
+                //   if (value != null) {
+                //     Map<String, Object> createDoc = new HashMap();
+                //     createDoc['Gest12'] = value;
+                //     fb.child("Gesture").update(createDoc);
+                //     final snackBar = SnackBar(content: Text('Gesture Updated'));
+                //     ScaffoldMessenger.of(context).showSnackBar(snackBar);
+                //   }
+                // });
+
+                // Call the customization class
+                openDialogueBox(context,'gest01');
               },
             ), //gest12
 
@@ -69,17 +84,18 @@ class _CustomisationPageState extends State<CustomisationPage> {
             ComboCard(
               height: height,
               width: width,
-              comboText: 'Combo 2',
+              comboText: 'Index, Middle and Pinky Finger bend',
               onPressed: () {
-                createDialog(context,'Index, Middle and Pinky Finger bent').then((value) {
-                  if (value != null) {
-                    Map<String, Object> createDoc = new HashMap();
-                    createDoc['Gest13'] = value;
-                    fb.child("Gesture").update(createDoc);
-                    final snackBar = SnackBar(content: Text('Gesture Updated'));
-                    ScaffoldMessenger.of(context).showSnackBar(snackBar);
-                  }
-                });
+                // createDialog(context).then((value) {
+                //   if (value != null) {
+                //     Map<String, Object> createDoc = new HashMap();
+                //     createDoc['Gest13'] = value;
+                //     fb.child("Gesture").update(createDoc);
+                //     final snackBar = SnackBar(content: Text('Gesture Updated'));
+                //     ScaffoldMessenger.of(context).showSnackBar(snackBar);
+                //   }
+                // });
+                openDialogueBox(context,'gest02');
               },
             ), //gest13
 
@@ -92,17 +108,18 @@ class _CustomisationPageState extends State<CustomisationPage> {
             ComboCard(
               height: height,
               width: width,
-              comboText: 'Combo 2',
+              comboText: 'Index,Middle and Ring Finger bend',
               onPressed: () {
-                createDialog(context,'Index,Middle and Ring Finger bent').then((value) {
-                  if (value != null) {
-                    Map<String, Object> createDoc = new HashMap();
-                    createDoc['Gest14'] = value;
-                    fb.child("Gesture").update(createDoc);
-                    final snackBar = SnackBar(content: Text('Gesture Updated'));
-                    ScaffoldMessenger.of(context).showSnackBar(snackBar);
-                  }
-                });
+                // createDialog(context).then((value) {
+                //   if (value != null) {
+                //     Map<String, Object> createDoc = new HashMap();
+                //     createDoc['Gest14'] = value;
+                //     fb.child("Gesture").update(createDoc);
+                //     final snackBar = SnackBar(content: Text('Gesture Updated'));
+                //     ScaffoldMessenger.of(context).showSnackBar(snackBar);
+                //   }
+                // });
+                openDialogueBox(context,'gest03');
               },
             ), //gest14
 
@@ -115,17 +132,18 @@ class _CustomisationPageState extends State<CustomisationPage> {
             ComboCard(
               height: height,
               width: width,
-              comboText: 'Combo 3',
+              comboText: 'Index,Middle,Ring and Pinky Finger bend',
               onPressed: () {
-                createDialog(context,'Index,Middle,Ring and Pinky Finger bent').then((value) {
-                  if (value != null) {
-                    Map<String, Object> createDoc = new HashMap();
-                    createDoc['Gest15'] = value;
-                    fb.child("Gesture").update(createDoc);
-                    final snackBar = SnackBar(content: Text('Gesture Updated'));
-                    ScaffoldMessenger.of(context).showSnackBar(snackBar);
-                  }
-                });
+                // createDialog(context).then((value) {
+                //   if (value != null) {
+                //     Map<String, Object> createDoc = new HashMap();
+                //     createDoc['Gest15'] = value;
+                //     fb.child("Gesture").update(createDoc);
+                //     final snackBar = SnackBar(content: Text('Gesture Updated'));
+                //     ScaffoldMessenger.of(context).showSnackBar(snackBar);
+                //   }
+                // });
+                openDialogueBox(context,'gest04');
               },
             ), //gest15
 
@@ -138,17 +156,18 @@ class _CustomisationPageState extends State<CustomisationPage> {
             ComboCard(
               height: height,
               width: width,
-              comboText: 'Combo 4',
+              comboText: 'Only Thumb bend',
               onPressed: () {
-                createDialog(context,'Only Thumb bent').then((value) {
-                  if (value != null) {
-                    Map<String, Object> createDoc = new HashMap();
-                    createDoc['Gest16'] = value;
-                    fb.child("Gesture").update(createDoc);
-                    final snackBar = SnackBar(content: Text('Gesture Updated'));
-                    ScaffoldMessenger.of(context).showSnackBar(snackBar);
-                  }
-                });
+                // createDialog(context).then((value) {
+                //   if (value != null) {
+                //     Map<String, Object> createDoc = new HashMap();
+                //     createDoc['Gest16'] = value;
+                //     fb.child("Gesture").update(createDoc);
+                //     final snackBar = SnackBar(content: Text('Gesture Updated'));
+                //     ScaffoldMessenger.of(context).showSnackBar(snackBar);
+                //   }
+                // });
+                openDialogueBox(context,'gest05');
               },
             ), //gest16
 
@@ -161,17 +180,18 @@ class _CustomisationPageState extends State<CustomisationPage> {
             ComboCard(
               height: height,
               width: width,
-              comboText: 'Combo 5',
+              comboText: 'Thumb and Pinky Finger bend',
               onPressed: () {
-                createDialog(context,'Thumb and Pinky Finger bent').then((value) {
-                  if (value != null) {
-                    Map<String, Object> createDoc = new HashMap();
-                    createDoc['Gest17'] = value;
-                    fb.child("Gesture").update(createDoc);
-                    final snackBar = SnackBar(content: Text('Gesture Updated'));
-                    ScaffoldMessenger.of(context).showSnackBar(snackBar);
-                  }
-                });
+                // createDialog(context).then((value) {
+                //   if (value != null) {
+                //     Map<String, Object> createDoc = new HashMap();
+                //     createDoc['Gest17'] = value;
+                //     fb.child("Gesture").update(createDoc);
+                //     final snackBar = SnackBar(content: Text('Gesture Updated'));
+                //     ScaffoldMessenger.of(context).showSnackBar(snackBar);
+                //   }
+                // });
+                openDialogueBox(context,'gest06');
               },
             ), //gest17
 
@@ -184,17 +204,18 @@ class _CustomisationPageState extends State<CustomisationPage> {
             ComboCard(
               height: height,
               width: width,
-              comboText: 'Combo 6',
+              comboText: 'Thumb and Ring Finger bend',
               onPressed: () {
-                createDialog(context,'Thumb and Ring Finger bent').then((value) {
-                  if (value != null) {
-                    Map<String, Object> createDoc = new HashMap();
-                    createDoc['Gest18'] = value;
-                    fb.child("Gesture").update(createDoc);
-                    final snackBar = SnackBar(content: Text('Gesture Updated'));
-                    ScaffoldMessenger.of(context).showSnackBar(snackBar);
-                  }
-                });
+                // createDialog(context).then((value) {
+                //   if (value != null) {
+                //     Map<String, Object> createDoc = new HashMap();
+                //     createDoc['Gest18'] = value;
+                //     fb.child("Gesture").update(createDoc);
+                //     final snackBar = SnackBar(content: Text('Gesture Updated'));
+                //     ScaffoldMessenger.of(context).showSnackBar(snackBar);
+                //   }
+                // });
+                openDialogueBox(context,'gest07');
               },
             ), //gest18
 
@@ -207,17 +228,18 @@ class _CustomisationPageState extends State<CustomisationPage> {
             ComboCard(
               height: height,
               width: width,
-              comboText: 'Combo 7',
+              comboText: 'Thumb,Ring and Pinky Finger bend',
               onPressed: () {
-                createDialog(context,'Thumb,Ring and Pinky Finger bent').then((value) {
-                  if (value != null) {
-                    Map<String, Object> createDoc = new HashMap();
-                    createDoc['Gest19'] = value;
-                    fb.child("Gesture").update(createDoc);
-                    final snackBar = SnackBar(content: Text('Gesture Updated'));
-                    ScaffoldMessenger.of(context).showSnackBar(snackBar);
-                  }
-                });
+                // createDialog(context).then((value) {
+                //   if (value != null) {
+                //     Map<String, Object> createDoc = new HashMap();
+                //     createDoc['Gest19'] = value;
+                //     fb.child("Gesture").update(createDoc);
+                //     final snackBar = SnackBar(content: Text('Gesture Updated'));
+                //     ScaffoldMessenger.of(context).showSnackBar(snackBar);
+                //   }
+                // });
+                openDialogueBox(context,'gest08');
               },
             ), //gest19
 
@@ -230,17 +252,18 @@ class _CustomisationPageState extends State<CustomisationPage> {
             ComboCard(
               height: height,
               width: width,
-              comboText: 'Combo 8',
+              comboText: 'Thumb and Middle Finger bend',
               onPressed: () {
-                createDialog(context,'Thumb and Middle Finger bent').then((value) {
-                  if (value != null) {
-                    Map<String, Object> createDoc = new HashMap();
-                    createDoc['Gest20'] = value;
-                    fb.child("Gesture").update(createDoc);
-                    final snackBar = SnackBar(content: Text('Gesture Updated'));
-                    ScaffoldMessenger.of(context).showSnackBar(snackBar);
-                  }
-                });
+                // createDialog(context).then((value) {
+                //   if (value != null) {
+                //     Map<String, Object> createDoc = new HashMap();
+                //     createDoc['Gest20'] = value;
+                //     fb.child("Gesture").update(createDoc);
+                //     final snackBar = SnackBar(content: Text('Gesture Updated'));
+                //     ScaffoldMessenger.of(context).showSnackBar(snackBar);
+                //   }
+                // });
+                openDialogueBox(context,'gest09');
               },
             ), //gest20
 
@@ -253,17 +276,18 @@ class _CustomisationPageState extends State<CustomisationPage> {
             ComboCard(
               height: height,
               width: width,
-              comboText: 'Combo 9',
+              comboText: 'Thumb,Middle and Pinky Finger bend',
               onPressed: () {
-                createDialog(context,'Thumb,Middle and Pinky Finger bent').then((value) {
-                  if (value != null) {
-                    Map<String, Object> createDoc = new HashMap();
-                    createDoc['Gest21'] = value;
-                    fb.child("Gesture").update(createDoc);
-                    final snackBar = SnackBar(content: Text('Gesture Updated'));
-                    ScaffoldMessenger.of(context).showSnackBar(snackBar);
-                  }
-                });
+                // createDialog(context).then((value) {
+                //   if (value != null) {
+                //     Map<String, Object> createDoc = new HashMap();
+                //     createDoc['Gest21'] = value;
+                //     fb.child("Gesture").update(createDoc);
+                //     final snackBar = SnackBar(content: Text('Gesture Updated'));
+                //     ScaffoldMessenger.of(context).showSnackBar(snackBar);
+                //   }
+                // });
+                openDialogueBox(context,'gest10');
               },
             ), //gest21
 
@@ -276,17 +300,18 @@ class _CustomisationPageState extends State<CustomisationPage> {
             ComboCard(
               height: height,
               width: width,
-              comboText: 'Combo 10',
+              comboText: 'Thumb,Middle and Ring Finger bend',
               onPressed: () {
-                createDialog(context,'Thumb,Middle and Ring Finger bent').then((value) {
-                  if (value != null) {
-                    Map<String, Object> createDoc = new HashMap();
-                    createDoc['Gest22'] = value;
-                    fb.child("Gesture").update(createDoc);
-                    final snackBar = SnackBar(content: Text('Gesture Updated'));
-                    ScaffoldMessenger.of(context).showSnackBar(snackBar);
-                  }
-                });
+                // createDialog(context).then((value) {
+                //   if (value != null) {
+                //     Map<String, Object> createDoc = new HashMap();
+                //     createDoc['Gest22'] = value;
+                //     fb.child("Gesture").update(createDoc);
+                //     final snackBar = SnackBar(content: Text('Gesture Updated'));
+                //     ScaffoldMessenger.of(context).showSnackBar(snackBar);
+                //   }
+                // });
+                openDialogueBox(context,'gest11');
               },
             ), //gest22
 
@@ -299,17 +324,18 @@ class _CustomisationPageState extends State<CustomisationPage> {
             ComboCard(
               height: height,
               width: width,
-              comboText: 'Combo 11',
+              comboText: 'Thumb,Middle,Ring and Pinky Finger bend',
               onPressed: () {
-                createDialog(context,'Thumb,Middle,Ring and Pinky Finger bent').then((value) {
-                  if (value != null) {
-                    Map<String, Object> createDoc = new HashMap();
-                    createDoc['Gest23'] = value;
-                    fb.child("Gesture").update(createDoc);
-                    final snackBar = SnackBar(content: Text('Gesture Updated'));
-                    ScaffoldMessenger.of(context).showSnackBar(snackBar);
-                  }
-                });
+                // createDialog(context).then((value) {
+                //   if (value != null) {
+                //     Map<String, Object> createDoc = new HashMap();
+                //     createDoc['Gest23'] = value;
+                //     fb.child("Gesture").update(createDoc);
+                //     final snackBar = SnackBar(content: Text('Gesture Updated'));
+                //     ScaffoldMessenger.of(context).showSnackBar(snackBar);
+                //   }
+                // });
+                openDialogueBox(context,'gest12');
               },
             ), //gest23
 
@@ -322,17 +348,18 @@ class _CustomisationPageState extends State<CustomisationPage> {
             ComboCard(
               height: height,
               width: width,
-              comboText: 'Combo 12',
+              comboText: 'Thumb and Index Finger bend',
               onPressed: () {
-                createDialog(context,'Thumb and Index Finger bent').then((value) {
-                  if (value != null) {
-                    Map<String, Object> createDoc = new HashMap();
-                    createDoc['Gest24'] = value;
-                    fb.child("Gesture").update(createDoc);
-                    final snackBar = SnackBar(content: Text('Gesture Updated'));
-                    ScaffoldMessenger.of(context).showSnackBar(snackBar);
-                  }
-                });
+                // createDialog(context).then((value) {
+                //   if (value != null) {
+                //     Map<String, Object> createDoc = new HashMap();
+                //     createDoc['Gest24'] = value;
+                //     fb.child("Gesture").update(createDoc);
+                //     final snackBar = SnackBar(content: Text('Gesture Updated'));
+                //     ScaffoldMessenger.of(context).showSnackBar(snackBar);
+                //   }
+                // });
+                openDialogueBox(context,'gest13');
               },
             ), //gest24
 
@@ -345,17 +372,18 @@ class _CustomisationPageState extends State<CustomisationPage> {
             ComboCard(
               height: height,
               width: width,
-              comboText: 'Combo 13',
+              comboText: 'Thumb,Index and Pinky Finger bend',
               onPressed: () {
-                createDialog(context,'Thumb,Index and Pinky Finger bent').then((value) {
-                  if (value != null) {
-                    Map<String, Object> createDoc = new HashMap();
-                    createDoc['Gest25'] = value;
-                    fb.child("Gesture").update(createDoc);
-                    final snackBar = SnackBar(content: Text('Gesture Updated'));
-                    ScaffoldMessenger.of(context).showSnackBar(snackBar);
-                  }
-                });
+                // createDialog(context).then((value) {
+                //   if (value != null) {
+                //     Map<String, Object> createDoc = new HashMap();
+                //     createDoc['Gest25'] = value;
+                //     fb.child("Gesture").update(createDoc);
+                //     final snackBar = SnackBar(content: Text('Gesture Updated'));
+                //     ScaffoldMessenger.of(context).showSnackBar(snackBar);
+                //   }
+                // });
+                openDialogueBox(context,'gest14');
               },
             ), //gest25
 
@@ -368,17 +396,18 @@ class _CustomisationPageState extends State<CustomisationPage> {
             ComboCard(
               height: height,
               width: width,
-              comboText: 'Combo 14',
+              comboText: 'Thumb,Index and Ring Finger bend',
               onPressed: () {
-                createDialog(context,'Thumb,Index and Ring Finger bent').then((value) {
-                  if (value != null) {
-                    Map<String, Object> createDoc = new HashMap();
-                    createDoc['Gest26'] = value;
-                    fb.child("Gesture").update(createDoc);
-                    final snackBar = SnackBar(content: Text('Gesture Updated'));
-                    ScaffoldMessenger.of(context).showSnackBar(snackBar);
-                  }
-                });
+                // createDialog(context).then((value) {
+                //   if (value != null) {
+                //     Map<String, Object> createDoc = new HashMap();
+                //     createDoc['Gest26'] = value;
+                //     fb.child("Gesture").update(createDoc);
+                //     final snackBar = SnackBar(content: Text('Gesture Updated'));
+                //     ScaffoldMessenger.of(context).showSnackBar(snackBar);
+                //   }
+                // });
+                openDialogueBox(context,'gest14');
               },
             ), //gest26
 
@@ -391,17 +420,18 @@ class _CustomisationPageState extends State<CustomisationPage> {
             ComboCard(
               height: height,
               width: width,
-              comboText: 'Combo 15',
+              comboText: 'Thumb,Index,Ring and Pinky Finger bend',
               onPressed: () {
-                createDialog(context,'Thumb,Index,Ring and Pinky Finger bent').then((value) {
-                  if (value != null) {
-                    Map<String, Object> createDoc = new HashMap();
-                    createDoc['Gest27'] = value;
-                    fb.child("Gesture").update(createDoc);
-                    final snackBar = SnackBar(content: Text('Gesture Updated'));
-                    ScaffoldMessenger.of(context).showSnackBar(snackBar);
-                  }
-                });
+                // createDialog(context).then((value) {
+                //   if (value != null) {
+                //     Map<String, Object> createDoc = new HashMap();
+                //     createDoc['Gest27'] = value;
+                //     fb.child("Gesture").update(createDoc);
+                //     final snackBar = SnackBar(content: Text('Gesture Updated'));
+                //     ScaffoldMessenger.of(context).showSnackBar(snackBar);
+                //   }
+                // });
+                openDialogueBox(context,'gest15');
               },
             ), //gest27
 
@@ -414,17 +444,18 @@ class _CustomisationPageState extends State<CustomisationPage> {
             ComboCard(
               height: height,
               width: width,
-              comboText: 'Combo 16',
+              comboText: 'Thumb,Index and Middle Finger bend',
               onPressed: () {
-                createDialog(context,'Thumb,Index and Middle Finger bent').then((value) {
-                  if (value != null) {
-                    Map<String, Object> createDoc = new HashMap();
-                    createDoc['Gest28'] = value;
-                    fb.child("Gesture").update(createDoc);
-                    final snackBar = SnackBar(content: Text('Gesture Updated'));
-                    ScaffoldMessenger.of(context).showSnackBar(snackBar);
-                  }
-                });
+                // createDialog(context).then((value) {
+                //   if (value != null) {
+                //     Map<String, Object> createDoc = new HashMap();
+                //     createDoc['Gest28'] = value;
+                //     fb.child("Gesture").update(createDoc);
+                //     final snackBar = SnackBar(content: Text('Gesture Updated'));
+                //     ScaffoldMessenger.of(context).showSnackBar(snackBar);
+                //   }
+                // });
+                openDialogueBox(context,'gest16');
               },
             ), //gest28
 
@@ -437,17 +468,18 @@ class _CustomisationPageState extends State<CustomisationPage> {
             ComboCard(
               height: height,
               width: width,
-              comboText: 'Combo 17',
+              comboText: 'Thumb,Index,Middle and Pinky Finger bend',
               onPressed: () {
-                createDialog(context,'Thumb,Index,Middle and Pinky Finger bent').then((value) {
-                  if (value != null) {
-                    Map<String, Object> createDoc = new HashMap();
-                    createDoc['Gest29'] = value;
-                    fb.child("Gesture").update(createDoc);
-                    final snackBar = SnackBar(content: Text('Gesture Updated'));
-                    ScaffoldMessenger.of(context).showSnackBar(snackBar);
-                  }
-                });
+                // createDialog(context).then((value) {
+                //   if (value != null) {
+                //     Map<String, Object> createDoc = new HashMap();
+                //     createDoc['Gest29'] = value;
+                //     fb.child("Gesture").update(createDoc);
+                //     final snackBar = SnackBar(content: Text('Gesture Updated'));
+                //     ScaffoldMessenger.of(context).showSnackBar(snackBar);
+                //   }
+                // });
+                openDialogueBox(context,'gest17');
               },
             ), //gest29
 
@@ -460,17 +492,18 @@ class _CustomisationPageState extends State<CustomisationPage> {
             ComboCard(
               height: height,
               width: width,
-              comboText: 'Combo 18',
+              comboText: 'Thumb,Index,Middle and Ring bend',
               onPressed: () {
-                createDialog(context,'Thumb,Index,Middle and Ring bent').then((value) {
-                  if (value != null) {
-                    Map<String, Object> createDoc = new HashMap();
-                    createDoc['Gest30'] = value;
-                    fb.child("Gesture").update(createDoc);
-                    final snackBar = SnackBar(content: Text('Gesture Updated'));
-                    ScaffoldMessenger.of(context).showSnackBar(snackBar);
-                  }
-                });
+                // createDialog(context).then((value) {
+                //   if (value != null) {
+                //     Map<String, Object> createDoc = new HashMap();
+                //     createDoc['Gest30'] = value;
+                //     fb.child("Gesture").update(createDoc);
+                //     final snackBar = SnackBar(content: Text('Gesture Updated'));
+                //     ScaffoldMessenger.of(context).showSnackBar(snackBar);
+                //   }
+                // });
+                openDialogueBox(context,'gest18');
               },
             ), //gest30
 
@@ -483,18 +516,18 @@ class _CustomisationPageState extends State<CustomisationPage> {
             ComboCard(
               height: height,
               width: width,
-              comboText: 'Combo 19',
+              comboText: 'All Fingers Bend',
               onPressed: () {
-
-                createDialog(context,'All Fingers bent').then((value) {
-                  if (value != null) {
-                    Map<String, Object> createDoc = new HashMap();
-                    createDoc['Gest31'] = value;
-                    fb.child("Gesture").update(createDoc);
-                    final snackBar = SnackBar(content: Text('Gesture Updated'));
-                    ScaffoldMessenger.of(context).showSnackBar(snackBar);
-                  }
-                });
+                // createDialog(context).then((value) {
+                //   if (value != null) {
+                //     Map<String, Object> createDoc = new HashMap();
+                //     createDoc['Gest31'] = value;
+                //     fb.child("Gesture").update(createDoc);
+                //     final snackBar = SnackBar(content: Text('Gesture Updated'));
+                //     ScaffoldMessenger.of(context).showSnackBar(snackBar);
+                //   }
+                // });
+                openDialogueBox(context,'gest19');
               },
             ), //gest31
           ],
@@ -502,15 +535,67 @@ class _CustomisationPageState extends State<CustomisationPage> {
       )),
     ));
   }
+
+  // Code to Customize
+  openDialogueBox(BuildContext context,String keyValue) {
+    key=keyValue;
+    return showDialog(
+        context: context,
+        builder: (context) {
+
+          return AlertDialog(
+            title: Text('Edit Gesture Details'),
+            content: Container(
+              height: 100,
+              child: Column(
+                children: [
+                  TextField(
+                    controller: gestcontroller,
+                    decoration: InputDecoration(hintText: keyValue),
+                  ),
+                  // TextField(
+                  //   controller: gest02controller,
+                  //   decoration: InputDecoration(hintText: 'gest02'),
+                  // ),
+                  // TextField(
+                  //   controller: gest03controller,
+                  //   decoration: InputDecoration(hintText: 'gest03'),
+                  // ),
+                ],
+              ),
+            ),
+            actions: [
+              FlatButton(
+                onPressed: () {
+                  submitAction(context);
+                  Navigator.pop(context);
+                },
+                child: Text('Submit'),
+              ),
+              FlatButton(
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+                child: Text('Cancel'),
+              )
+            ],
+          );
+        });
+  }
+
+  // Submit Action
+  submitAction(BuildContext context) {
+    updateData(gestcontroller.text, key, userID);
+  }
 }
 
-//Code
+// new Code
 class ComboCard extends StatelessWidget {
   ComboCard(
       {@required this.height,
-      @required this.width,
-      this.comboText,
-      this.onPressed});
+        @required this.width,
+        this.comboText,
+        this.onPressed});
 
   final double height;
   final double width;
@@ -564,13 +649,14 @@ class ComboCard extends StatelessWidget {
   }
 }
 
-Future<String> createDialog(BuildContext context,String text) {
+// Old Code
+Future<String> createDialog(BuildContext context) {
   TextEditingController ed = TextEditingController();
   return showDialog(
       context: context,
       builder: (context) {
         return AlertDialog(
-          title: Text(text),
+          title: Text('Update Data'),
           content: TextField(
             decoration: InputDecoration(
               hintText: 'Confirm your text',
@@ -588,3 +674,5 @@ Future<String> createDialog(BuildContext context,String text) {
         );
       });
 }
+
+
