@@ -1,4 +1,4 @@
-name: myvoicingglove
+name: mevoicingglove
 description: A new Flutter project.
 
 # The following line prevents the package from being accidentally published to
@@ -31,10 +31,21 @@ dependencies:
   auto_size_text: ^2.1.0
   circular_profile_avatar: ^2.0.0
   system_settings: 2.0.0
-
+  flutter_tts: ^3.1.0
+  firebase_database: ^7.1.1
+  firebase_auth: ^1.4.1
+#  modal_progress_hud: ^0.1.3
+  cloud_firestore: ^2.3.0
+  provider: ^5.0.0
 
 
 dev_dependencies:
+  flutter_launcher_icons: ^0.9.0
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "images/voicingglove.png"
+#don't delete assets/images/appicon.png. I did'nt use it anywhere but if i delete that, app stops working, :(
   flutter_test:
     sdk: flutter
 
@@ -49,14 +60,10 @@ flutter:
   # the material Icons class.
   uses-material-design: true
 
-
+  # To add assets to your application, add an assets section, like this:
   assets:
     - images/
 
-  fonts:
-  - family: Staatliches
-    fonts:
-    - asset: fonts/Staatliches-Regular.ttf
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
 
@@ -68,12 +75,10 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
-  # fonts:
-  #   - family: Schyler
-  #     fonts:
-  #       - asset: fonts/Schyler-Regular.ttf
-  #       - asset: fonts/Schyler-Italic.ttf
-  #         style: italic
+  fonts:
+    - family: Schyler
+      fonts:
+        - asset: fonts/Staatliches-Regular.ttf
   #   - family: Trajan Pro
   #     fonts:
   #       - asset: fonts/TrajanPro.ttf
