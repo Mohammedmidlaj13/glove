@@ -1,3 +1,4 @@
+
 import 'package:flutter/material.dart';
 import 'package:mevoicingglove/constants/constants.dart';
 import 'package:mevoicingglove/constants/cards.dart';
@@ -24,6 +25,8 @@ class _CustomisationPageState extends State<CustomisationPage> {
   updateData(String gest01,String key,  String userID) async {
     await updateUserData(gest01,key);
   }
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -57,7 +60,7 @@ class _CustomisationPageState extends State<CustomisationPage> {
             ComboCard(
               height: height,
               width: width,
-              comboText: 'Index and Middle Finger bend',
+              comboText: 'Index and Middle Finger bent',
 
               onPressed: () {
                 // createDialog(context).then((value) {
@@ -84,7 +87,7 @@ class _CustomisationPageState extends State<CustomisationPage> {
             ComboCard(
               height: height,
               width: width,
-              comboText: 'Index, Middle and Pinky Finger bend',
+              comboText: 'Index, Middle and Pinky Finger bent',
               onPressed: () {
                 // createDialog(context).then((value) {
                 //   if (value != null) {
@@ -108,7 +111,7 @@ class _CustomisationPageState extends State<CustomisationPage> {
             ComboCard(
               height: height,
               width: width,
-              comboText: 'Index,Middle and Ring Finger bend',
+              comboText: 'Index,Middle and Ring Finger bent',
               onPressed: () {
                 // createDialog(context).then((value) {
                 //   if (value != null) {
@@ -132,7 +135,7 @@ class _CustomisationPageState extends State<CustomisationPage> {
             ComboCard(
               height: height,
               width: width,
-              comboText: 'Index,Middle,Ring and Pinky Finger bend',
+              comboText: 'Index,Middle,Ring and Pinky Finger bent',
               onPressed: () {
                 // createDialog(context).then((value) {
                 //   if (value != null) {
@@ -156,7 +159,7 @@ class _CustomisationPageState extends State<CustomisationPage> {
             ComboCard(
               height: height,
               width: width,
-              comboText: 'Only Thumb bend',
+              comboText: 'Only Thumb bent',
               onPressed: () {
                 // createDialog(context).then((value) {
                 //   if (value != null) {
@@ -180,7 +183,7 @@ class _CustomisationPageState extends State<CustomisationPage> {
             ComboCard(
               height: height,
               width: width,
-              comboText: 'Thumb and Pinky Finger bend',
+              comboText: 'Thumb and Pinky Finger bent',
               onPressed: () {
                 // createDialog(context).then((value) {
                 //   if (value != null) {
@@ -204,7 +207,7 @@ class _CustomisationPageState extends State<CustomisationPage> {
             ComboCard(
               height: height,
               width: width,
-              comboText: 'Thumb and Ring Finger bend',
+              comboText: 'Thumb and Ring Finger bent',
               onPressed: () {
                 // createDialog(context).then((value) {
                 //   if (value != null) {
@@ -228,7 +231,7 @@ class _CustomisationPageState extends State<CustomisationPage> {
             ComboCard(
               height: height,
               width: width,
-              comboText: 'Thumb,Ring and Pinky Finger bend',
+              comboText: 'Thumb,Ring and Pinky Finger bent',
               onPressed: () {
                 // createDialog(context).then((value) {
                 //   if (value != null) {
@@ -252,7 +255,7 @@ class _CustomisationPageState extends State<CustomisationPage> {
             ComboCard(
               height: height,
               width: width,
-              comboText: 'Thumb and Middle Finger bend',
+              comboText: 'Thumb and Middle Finger bent',
               onPressed: () {
                 // createDialog(context).then((value) {
                 //   if (value != null) {
@@ -276,7 +279,7 @@ class _CustomisationPageState extends State<CustomisationPage> {
             ComboCard(
               height: height,
               width: width,
-              comboText: 'Thumb,Middle and Pinky Finger bend',
+              comboText: 'Thumb,Middle and Pinky Finger bent',
               onPressed: () {
                 // createDialog(context).then((value) {
                 //   if (value != null) {
@@ -300,7 +303,7 @@ class _CustomisationPageState extends State<CustomisationPage> {
             ComboCard(
               height: height,
               width: width,
-              comboText: 'Thumb,Middle and Ring Finger bend',
+              comboText: 'Thumb,Middle and Ring Finger bent',
               onPressed: () {
                 // createDialog(context).then((value) {
                 //   if (value != null) {
@@ -324,7 +327,7 @@ class _CustomisationPageState extends State<CustomisationPage> {
             ComboCard(
               height: height,
               width: width,
-              comboText: 'Thumb,Middle,Ring and Pinky Finger bend',
+              comboText: 'Thumb,Middle,Ring and Pinky Finger bent',
               onPressed: () {
                 // createDialog(context).then((value) {
                 //   if (value != null) {
@@ -348,7 +351,7 @@ class _CustomisationPageState extends State<CustomisationPage> {
             ComboCard(
               height: height,
               width: width,
-              comboText: 'Thumb and Index Finger bend',
+              comboText: 'Thumb and Index Finger bent',
               onPressed: () {
                 // createDialog(context).then((value) {
                 //   if (value != null) {
@@ -372,7 +375,7 @@ class _CustomisationPageState extends State<CustomisationPage> {
             ComboCard(
               height: height,
               width: width,
-              comboText: 'Thumb,Index and Pinky Finger bend',
+              comboText: 'Thumb,Index and Pinky Finger bent',
               onPressed: () {
                 // createDialog(context).then((value) {
                 //   if (value != null) {
@@ -396,7 +399,7 @@ class _CustomisationPageState extends State<CustomisationPage> {
             ComboCard(
               height: height,
               width: width,
-              comboText: 'Thumb,Index and Ring Finger bend',
+              comboText: 'Thumb,Index and Ring Finger bent',
               onPressed: () {
                 // createDialog(context).then((value) {
                 //   if (value != null) {
@@ -420,7 +423,7 @@ class _CustomisationPageState extends State<CustomisationPage> {
             ComboCard(
               height: height,
               width: width,
-              comboText: 'Thumb,Index,Ring and Pinky Finger bend',
+              comboText: 'Thumb,Index,Ring and Pinky Finger bent',
               onPressed: () {
                 // createDialog(context).then((value) {
                 //   if (value != null) {
@@ -444,7 +447,7 @@ class _CustomisationPageState extends State<CustomisationPage> {
             ComboCard(
               height: height,
               width: width,
-              comboText: 'Thumb,Index and Middle Finger bend',
+              comboText: 'Thumb,Index and Middle Finger bent',
               onPressed: () {
                 // createDialog(context).then((value) {
                 //   if (value != null) {
@@ -468,7 +471,7 @@ class _CustomisationPageState extends State<CustomisationPage> {
             ComboCard(
               height: height,
               width: width,
-              comboText: 'Thumb,Index,Middle and Pinky Finger bend',
+              comboText: 'Thumb,Index,Middle and Pinky Finger bent',
               onPressed: () {
                 // createDialog(context).then((value) {
                 //   if (value != null) {
@@ -492,17 +495,9 @@ class _CustomisationPageState extends State<CustomisationPage> {
             ComboCard(
               height: height,
               width: width,
-              comboText: 'Thumb,Index,Middle and Ring bend',
+              comboText: 'Thumb,Index,Middle and Ring bent ',
               onPressed: () {
-                // createDialog(context).then((value) {
-                //   if (value != null) {
-                //     Map<String, Object> createDoc = new HashMap();
-                //     createDoc['Gest30'] = value;
-                //     fb.child("Gesture").update(createDoc);
-                //     final snackBar = SnackBar(content: Text('Gesture Updated'));
-                //     ScaffoldMessenger.of(context).showSnackBar(snackBar);
-                //   }
-                // });
+               
                 openDialogueBox(context,'gest18');
               },
             ), //gest30
@@ -516,17 +511,9 @@ class _CustomisationPageState extends State<CustomisationPage> {
             ComboCard(
               height: height,
               width: width,
-              comboText: 'All Fingers Bend',
+              comboText: 'All Fingers bent',
               onPressed: () {
-                // createDialog(context).then((value) {
-                //   if (value != null) {
-                //     Map<String, Object> createDoc = new HashMap();
-                //     createDoc['Gest31'] = value;
-                //     fb.child("Gesture").update(createDoc);
-                //     final snackBar = SnackBar(content: Text('Gesture Updated'));
-                //     ScaffoldMessenger.of(context).showSnackBar(snackBar);
-                //   }
-                // });
+                
                 openDialogueBox(context,'gest19');
               },
             ), //gest31
@@ -553,14 +540,7 @@ class _CustomisationPageState extends State<CustomisationPage> {
                     controller: gestcontroller,
                     decoration: InputDecoration(hintText: keyValue),
                   ),
-                  // TextField(
-                  //   controller: gest02controller,
-                  //   decoration: InputDecoration(hintText: 'gest02'),
-                  // ),
-                  // TextField(
-                  //   controller: gest03controller,
-                  //   decoration: InputDecoration(hintText: 'gest03'),
-                  // ),
+                 
                 ],
               ),
             ),
@@ -568,6 +548,7 @@ class _CustomisationPageState extends State<CustomisationPage> {
               FlatButton(
                 onPressed: () {
                   submitAction(context);
+                  gestcontroller.clear(); //remove the code if data  is not going to db
                   Navigator.pop(context);
                 },
                 child: Text('Submit'),
@@ -618,10 +599,13 @@ class ComboCard extends StatelessWidget {
 
               children: [
                 SizedBox(width: width*.04,),
-                AutoSizeText(
-                  comboText,
-                  style: comboTag,
-                  maxLines: 1,
+                Expanded(
+                  child: AutoSizeText(
+                    comboText,
+                    style: comboTag,
+                    maxLines: 2,
+
+                  ),
                 ),
                 SizedBox(width: width*.03,),
                 GestureDetector(
