@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:mevoicingglove/constants/constants.dart';
 import 'package:mevoicingglove/constants/cards.dart';
@@ -25,7 +24,6 @@ class _CustomisationPageState extends State<CustomisationPage> {
   updateData(String gest01,String key,  String userID) async {
     await updateUserData(gest01,key);
   }
-
 
 
   @override
@@ -497,7 +495,15 @@ class _CustomisationPageState extends State<CustomisationPage> {
               width: width,
               comboText: 'Thumb,Index,Middle and Ring bent ',
               onPressed: () {
-               
+                // createDialog(context).then((value) {
+                //   if (value != null) {
+                //     Map<String, Object> createDoc = new HashMap();
+                //     createDoc['Gest30'] = value;
+                //     fb.child("Gesture").update(createDoc);
+                //     final snackBar = SnackBar(content: Text('Gesture Updated'));
+                //     ScaffoldMessenger.of(context).showSnackBar(snackBar);
+                //   }
+                // });
                 openDialogueBox(context,'gest18');
               },
             ), //gest30
@@ -513,7 +519,15 @@ class _CustomisationPageState extends State<CustomisationPage> {
               width: width,
               comboText: 'All Fingers bent',
               onPressed: () {
-                
+                // createDialog(context).then((value) {
+                //   if (value != null) {
+                //     Map<String, Object> createDoc = new HashMap();
+                //     createDoc['Gest31'] = value;
+                //     fb.child("Gesture").update(createDoc);
+                //     final snackBar = SnackBar(content: Text('Gesture Updated'));
+                //     ScaffoldMessenger.of(context).showSnackBar(snackBar);
+                //   }
+                // });
                 openDialogueBox(context,'gest19');
               },
             ), //gest31
@@ -540,7 +554,7 @@ class _CustomisationPageState extends State<CustomisationPage> {
                     controller: gestcontroller,
                     decoration: InputDecoration(hintText: keyValue),
                   ),
-                 
+
                 ],
               ),
             ),
@@ -548,7 +562,7 @@ class _CustomisationPageState extends State<CustomisationPage> {
               FlatButton(
                 onPressed: () {
                   submitAction(context);
-                  gestcontroller.clear(); //remove the code if data  is not going to db
+                  gestcontroller.clear();
                   Navigator.pop(context);
                 },
                 child: Text('Submit'),
@@ -658,5 +672,7 @@ Future<String> createDialog(BuildContext context) {
         );
       });
 }
+
+
 
 
